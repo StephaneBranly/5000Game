@@ -165,8 +165,44 @@ int calcul_points(int ancien_s, chain_des chain, int de_triple){
 
 void afficher_des(chain_des chain){
     if(chain!=NULL){
-        if(chain->occ > 0)
-            printf("\n[%d]  *%d",chain->valeur,chain->occ);
+        if(chain->occ > 0){
+            int i;
+            for(i=0;i<chain->occ;i++){
+                switch(chain->valeur){
+                    case 1:
+                        printf("\n      [     ]");
+                        printf("\n      [  o  ]");
+                        printf("\n      [     ]\n");
+                        break;
+                    case 2:
+                        printf("\n      [    o]");
+                        printf("\n      [     ]");
+                        printf("\n      [o    ]\n");
+                        break;
+                    case 3:
+                        printf("\n      [    o]");
+                        printf("\n      [  o  ]");
+                        printf("\n      [o    ]\n");
+                        break;
+                    case 4:
+                        printf("\n      [o   o]");
+                        printf("\n      [     ]");
+                        printf("\n      [o   o]\n");
+                        break;
+                    case 5:
+                        printf("\n      [o   o]");
+                        printf("\n      [  o  ]");
+                        printf("\n      [o   o]\n");
+                        break;
+                    case 6:
+                        printf("\n      [o   o]");
+                        printf("\n      [o   o]");
+                        printf("\n      [o   o]\n");
+                        break;
+                }
+            }
+        }
+            //printf("\n[%d]  *%d",chain->valeur,chain->occ);
         afficher_des(chain->de_suivant);
     }
 }
@@ -219,6 +255,6 @@ int test_possibilites(chain_des des_conserves, abr_s* nouveau_abr_s){
 
     if(5-compteur!=0)
         return mix_possibilites(chain_test,score_conserve,de_triple,nouveau_abr_s,5-compteur);
-    return 1;
+    return 0;
 }
 

@@ -18,8 +18,8 @@ int main(){
     int nbr_tests=test_possibilites(chain,&nouveau_abr_s);
 
     color(10,0);
-    printf("\nVos probabilites de gagner :\n");
-    printf("\nNbr de tests effectues : %d\n",nbr_tests);
+    printf("\nNbr de tests effectues : %d",nbr_tests);
+    printf("\nVos probabilites de gagner :");
     color(15,0);
     afficher_abr_s(nouveau_abr_s,nbr_tests);
 }
